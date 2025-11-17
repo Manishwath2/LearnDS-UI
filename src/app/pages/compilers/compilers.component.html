@@ -1,0 +1,79 @@
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <div class="text-center mb-12">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Online Compilers</h1>
+    <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+      Practice coding in multiple languages with our built-in online compilers
+    </p>
+  </div>
+
+  <!-- Compilers Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+    <div *ngFor="let compiler of compilers" 
+         class="bg-gray-900/50 border border-gray-800 rounded-2xl p-8 shadow-neo hover:shadow-neo-hover transition-all duration-300 transform hover:scale-105 cursor-pointer">
+      <div class="text-center">
+        <div class="text-6xl mb-4">{{ compiler.icon }}</div>
+        <h3 class="text-2xl font-bold mb-4">{{ compiler.name }}</h3>
+        <button class="px-6 py-3 bg-gradient-to-r {{ compiler.color }} text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+          Open Compiler
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <div class="bg-gray-900/50 border border-gray-800 rounded-2xl p-10 shadow-neo mb-16">
+    <h2 class="text-3xl font-bold mb-8 text-center">Compiler Features</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div class="flex items-start space-x-4">
+        <div class="flex-shrink-0 w-12 h-12 bg-neo-blue/20 rounded-lg flex items-center justify-center text-2xl">
+          ⚡
+        </div>
+        <div>
+          <h4 class="text-xl font-semibold mb-2">Lightning Fast</h4>
+          <p class="text-gray-400">Compile and run your code in milliseconds with our optimized infrastructure.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start space-x-4">
+        <div class="flex-shrink-0 w-12 h-12 bg-neo-blue/20 rounded-lg flex items-center justify-center text-2xl">
+          💾
+        </div>
+        <div>
+          <h4 class="text-xl font-semibold mb-2">Auto-Save</h4>
+          <p class="text-gray-400">Your code is automatically saved so you never lose your progress.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start space-x-4">
+        <div class="flex-shrink-0 w-12 h-12 bg-neo-blue/20 rounded-lg flex items-center justify-center text-2xl">
+          🎨
+        </div>
+        <div>
+          <h4 class="text-xl font-semibold mb-2">Syntax Highlighting</h4>
+          <p class="text-gray-400">Beautiful syntax highlighting makes your code easy to read and understand.</p>
+        </div>
+      </div>
+
+      <div class="flex items-start space-x-4">
+        <div class="flex-shrink-0 w-12 h-12 bg-neo-blue/20 rounded-lg flex items-center justify-center text-2xl">
+          🔧
+        </div>
+        <div>
+          <h4 class="text-xl font-semibold mb-2">Debugging Tools</h4>
+          <p class="text-gray-400">Built-in debugging capabilities to help you find and fix issues quickly.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <div class="bg-gradient-to-r from-neo-blue/10 to-blue-500/10 border border-neo-blue/20 rounded-2xl p-10 shadow-neo text-center">
+    <h2 class="text-3xl font-bold mb-4">Ready to Start Coding?</h2>
+    <p class="text-gray-400 mb-6 max-w-2xl mx-auto">
+      Choose a compiler above and start practicing your coding skills right away. No setup required!
+    </p>
+    <button class="px-8 py-4 bg-neo-blue hover:bg-blue-500 text-white font-semibold rounded-lg shadow-neo hover:shadow-neo-hover transition-all duration-300 transform hover:scale-105">
+      Get Started Now
+    </button>
+  </div>
+</div>

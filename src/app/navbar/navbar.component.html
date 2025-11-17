@@ -1,0 +1,95 @@
+<nav class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-neo-dark/80 shadow-neo border-b border-gray-800">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a routerLink="/" class="flex items-center space-x-2">
+          <span class="text-2xl font-bold bg-gradient-to-r from-neo-blue to-blue-400 bg-clip-text text-transparent">
+            LearnDS
+          </span>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center space-x-8">
+        <a routerLink="/" 
+           routerLinkActive="text-neo-blue border-b-2 border-neo-blue"
+           [routerLinkActiveOptions]="{exact: true}"
+           class="text-gray-300 hover:text-white transition-all duration-200 py-2">
+          Home
+        </a>
+        <a routerLink="/services" 
+           routerLinkActive="text-neo-blue border-b-2 border-neo-blue"
+           class="text-gray-300 hover:text-white transition-all duration-200 py-2">
+          Services
+        </a>
+        <a routerLink="/about" 
+           routerLinkActive="text-neo-blue border-b-2 border-neo-blue"
+           class="text-gray-300 hover:text-white transition-all duration-200 py-2">
+          About Us
+        </a>
+        <a routerLink="/compilers" 
+           routerLinkActive="text-neo-blue border-b-2 border-neo-blue"
+           class="text-gray-300 hover:text-white transition-all duration-200 py-2">
+          Compilers
+        </a>
+      </div>
+
+      <!-- CTA Button -->
+      <div class="hidden md:block">
+        <a routerLink="/mentor-chat" 
+           class="px-6 py-2.5 bg-neo-blue hover:bg-blue-500 text-white font-semibold rounded-lg shadow-neo hover:shadow-neo-hover transition-all duration-300 transform hover:scale-105">
+          Talk to Mentor
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button (click)="toggleMenu()" 
+                class="text-gray-300 hover:text-white focus:outline-none focus:text-white"
+                aria-label="Toggle menu">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path *ngIf="!isMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            <path *ngIf="isMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div *ngIf="isMenuOpen" class="md:hidden bg-neo-dark/95 border-t border-gray-800">
+    <div class="px-2 pt-2 pb-3 space-y-1">
+      <a routerLink="/" 
+         routerLinkActive="bg-neo-blue/20 text-neo-blue"
+         [routerLinkActiveOptions]="{exact: true}"
+         (click)="toggleMenu()"
+         class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 transition-colors duration-200">
+        Home
+      </a>
+      <a routerLink="/services" 
+         routerLinkActive="bg-neo-blue/20 text-neo-blue"
+         (click)="toggleMenu()"
+         class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 transition-colors duration-200">
+        Services
+      </a>
+      <a routerLink="/about" 
+         routerLinkActive="bg-neo-blue/20 text-neo-blue"
+         (click)="toggleMenu()"
+         class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 transition-colors duration-200">
+        About Us
+      </a>
+      <a routerLink="/compilers" 
+         routerLinkActive="bg-neo-blue/20 text-neo-blue"
+         (click)="toggleMenu()"
+         class="block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-800 transition-colors duration-200">
+        Compilers
+      </a>
+      <a routerLink="/mentor-chat" 
+         (click)="toggleMenu()"
+         class="block px-3 py-2 mx-2 mt-4 text-center bg-neo-blue hover:bg-blue-500 text-white font-semibold rounded-lg shadow-neo transition-all duration-300">
+        Talk to Mentor
+      </a>
+    </div>
+  </div>
+</nav>

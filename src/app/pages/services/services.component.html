@@ -1,0 +1,45 @@
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+  <div class="text-center mb-12">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Our Services</h1>
+    <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+      Comprehensive learning paths designed to take you from beginner to expert
+    </p>
+  </div>
+
+  <!-- Loading State -->
+  <div *ngIf="loading" class="flex justify-center items-center py-20">
+    <div class="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-neo-blue"></div>
+  </div>
+
+  <!-- Services Grid -->
+  <div *ngIf="!loading" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+    <div *ngFor="let service of services" 
+         class="bg-gray-900/50 border border-gray-800 rounded-2xl p-8 shadow-neo hover:shadow-neo-hover transition-all duration-300 transform hover:scale-105">
+      <div class="flex items-center mb-6">
+        <span class="text-6xl mr-4">{{ service.icon }}</span>
+        <h2 class="text-2xl font-bold">{{ service.title }}</h2>
+      </div>
+      <p class="text-gray-400 text-lg leading-relaxed">
+        {{ service.description }}
+      </p>
+      <div class="mt-6">
+        <button class="px-6 py-3 bg-neo-blue/10 hover:bg-neo-blue text-neo-blue hover:text-white border border-neo-blue rounded-lg font-semibold transition-all duration-300">
+          Learn More
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Additional Info -->
+  <div class="mt-16 bg-gradient-to-r from-neo-red/10 to-red-500/10 border border-neo-red/20 rounded-2xl p-8 shadow-neo">
+    <div class="text-center">
+      <h2 class="text-3xl font-bold mb-4">Need a Custom Learning Path?</h2>
+      <p class="text-gray-400 mb-6 max-w-2xl mx-auto">
+        Our mentors can help you design a personalized curriculum based on your goals and current skill level.
+      </p>
+      <button class="px-8 py-3 bg-neo-red hover:bg-red-500 text-white font-semibold rounded-lg shadow-neo hover:shadow-neo-hover transition-all duration-300 transform hover:scale-105">
+        Schedule a Consultation
+      </button>
+    </div>
+  </div>
+</div>
