@@ -1,0 +1,39 @@
+<div class="api-demo-container">
+  <h2>API Integration Demo</h2>
+  
+  <div class="demo-section">
+    <h3>AI Service Demo</h3>
+    <button (click)="callAiService()" [disabled]="isLoading">
+      Ask AI a Question
+    </button>
+    
+    <div *ngIf="aiResponse" class="response-box">
+      <h4>AI Response:</h4>
+      <p>{{ aiResponse }}</p>
+    </div>
+  </div>
+
+  <div class="demo-section">
+    <h3>Database Service Demo</h3>
+    <button (click)="fetchModules()" [disabled]="isLoading">
+      Fetch Learning Modules
+    </button>
+    
+    <div *ngIf="modules.length > 0" class="modules-list">
+      <h4>Modules:</h4>
+      <ul>
+        <li *ngFor="let module of modules">
+          {{ module.title }} - {{ module.category }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div *ngIf="error" class="error-box">
+    <strong>Error:</strong> {{ error }}
+  </div>
+
+  <div *ngIf="isLoading" class="loading">
+    Loading...
+  </div>
+</div>
