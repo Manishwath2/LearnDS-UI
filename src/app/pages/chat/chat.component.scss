@@ -1,0 +1,21 @@
+// Additional component-specific styles can go here
+
+// Custom scrollbar for message container
+#message-container {
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #2563eb;
+  }
+}
